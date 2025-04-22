@@ -7,6 +7,7 @@ function App() {
   return (
     <div>
       <Page1 />
+      <h1>hii</h1>
     </div>
   );
 }
