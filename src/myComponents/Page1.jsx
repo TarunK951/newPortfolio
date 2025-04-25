@@ -9,65 +9,49 @@ import {
 } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 import { MdFileDownload } from "react-icons/md";
-import profileImageStatic from "../assets/profile-static.jpg"; // Your static image
-import profileImageGIF from "../assets/profile.gif"; // Your animated GIF
+import profileImage from "../assets/STK-20250425-WA0004-ezgif.com-speed.gif";
 import "./p.css";
 
 function Page1() {
   const [shiftmode, setShiftmode] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-  const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
     document.body.classList.toggle("dark-mode", shiftmode);
-    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
   }, [shiftmode]);
-
-  const handleTap = (e) => {
-    if (!isMobile) return;
-    const element = e.currentTarget;
-    element.classList.add("tap-effect");
-    setTimeout(() => {
-      element.classList.remove("tap-effect");
-    }, 300);
-  };
 
   return (
     <div className={`page1 ${shiftmode ? "dark" : "light"}`}>
       <nav className="navBar">
         <div className="navCom">
-          <div className="logo" onTouchStart={handleTap}>
-            TARUN
-          </div>
+          <div className="logo">TARUN</div>
           <button
             className="menu-toggle"
             onClick={() => setMenuOpen(!menuOpen)}
-            onTouchStart={handleTap}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
           >
             {menuOpen ? (
-              <FaTimes size={30} className="icon-color" />
+              <FaTimes size={30} className="icon" />
             ) : (
-              <FaBars size={30} className="icon-color" />
+              <FaBars size={30} className="icon" />
             )}
           </button>
           <div className={`details ${menuOpen ? "open" : ""}`}>
-            <p onTouchStart={handleTap}>Home</p>
-            <p onTouchStart={handleTap}>About</p>
+            <p>Home</p>
+            <p>About</p>
           </div>
           <div className="shift-btn">
             <button
               className="nd-btn"
               onClick={() => setShiftmode(!shiftmode)}
-              onTouchStart={handleTap}
+              aria-label={
+                shiftmode ? "Switch to light mode" : "Switch to dark mode"
+              }
             >
               {shiftmode ? (
-                <CiLight size={35} className="icon-color" />
+                <CiLight size={35} className="icon" />
               ) : (
-                <CiDark size={35} className="icon-color" />
+                <CiDark size={35} className="icon" />
               )}
             </button>
           </div>
@@ -77,35 +61,20 @@ function Page1() {
         <div className="intro-card">
           <div className="intro-text">
             <div className="info">
-              <p className="greeting slide-in">Hello, I'm</p>
-              <p className="name slide-in">Tarun</p>
+              <p className="greeting">Hello, I'm</p>
+              <p className="name">Tarun</p>
             </div>
             <div className="bio">
-              <p className="slide-in">
-                Passionate about crafting beautiful web experiences
-              </p>
+              <p>Passionate about crafting beautiful web experiences</p>
             </div>
           </div>
           <div className="intro-img">
-            <div
-              className="image-wrapper"
-              onMouseEnter={() => setIsAnimating(true)}
-              onMouseLeave={() => setIsAnimating(false)}
-              onTouchStart={() => {
-                setIsAnimating(true);
-                handleTap();
-              }}
-              onTouchEnd={() => setTimeout(() => setIsAnimating(false), 1000)}
-            >
+            <div className="image-wrapper">
               <img
-                className="static-image"
-                src={profileImageStatic}
+                className="hi-img"
+                src={profileImage}
                 alt="Tarun's profile"
-              />
-              <img
-                className={`gif-image ${isAnimating ? "active" : ""}`}
-                src={profileImageGIF}
-                alt="Tarun's animated profile"
+                onError={(e) => console.error("Image failed to load:", e)}
               />
               <div className="glow-overlay"></div>
             </div>
@@ -113,7 +82,7 @@ function Page1() {
         </div>
         <div className="intro-footer">
           <div className="role">
-            <p className="scale-in">Frontend Developer</p>
+            <p>Frontend Developer</p>
           </div>
           <div className="media-icons">
             <a
@@ -121,40 +90,40 @@ function Page1() {
               target="_blank"
               rel="noopener noreferrer"
               className="social-icon"
-              onTouchStart={handleTap}
+              aria-label="GitHub profile"
             >
-              <FaGithubSquare size={45} />
+              <FaGithubSquare size={45} className="icon" />
             </a>
             <a
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
               className="social-icon"
-              onTouchStart={handleTap}
+              aria-label="LinkedIn profile"
             >
-              <FaLinkedin size={45} />
+              <FaLinkedin size={45} className="icon" />
             </a>
             <a
               href="mailto:example@gmail.com"
               className="social-icon"
-              onTouchStart={handleTap}
+              aria-label="Email"
             >
-              <IoIosMail size={45} />
+              <IoIosMail size={45} className="icon" />
             </a>
             <a
               href="https://wa.me/1234567890"
               target="_blank"
               rel="noopener noreferrer"
               className="social-icon"
-              onTouchStart={handleTap}
+              aria-label="WhatsApp"
             >
-              <FaWhatsappSquare size={45} />
+              <FaWhatsappSquare size={45} className="icon" />
             </a>
           </div>
           <div className="Rbtn">
-            <button onTouchStart={handleTap}>
+            <button aria-label="Download resume">
               <p>Download Resume</p>
-              <MdFileDownload size={35} className="icon-color" />
+              <MdFileDownload size={35} className="icon" />
               <div className="ripple"></div>
             </button>
           </div>
