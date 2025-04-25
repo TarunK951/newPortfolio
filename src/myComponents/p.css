@@ -1,3 +1,45 @@
 .page1 {
-  background-color: black;
+  background-color: var(--bg-color);
+  height: 100vh;
+  color: var(--text-color);
+  transition: all 0.5 ease;
+  /* position: fixed; */
+
+  .navBar {
+    background-color: var(--shift-nav);
+    backdrop-filter: blur(15px);
+    border-bottom: var(--border-bottom);
+
+    .navCom {
+      display: flex;
+      justify-content: space-between;
+      height: 8vh;
+      display: flex;
+      align-items: center;
+
+      .logo {
+        min-width: 25%;
+        padding-inline: 20px;
+        font-size: 40px;
+      }
+
+      .details {
+        display: flex;
+        gap: 20%;
+        padding-inline: 200px;
+      }
+      .shift-btn {
+        .nd-btn {
+          background-color: transparent;
+          border: none;
+          padding-inline: 25px;
+        }
+      }
+    }
+  }
+
+  .intro {
+    display: flex;
+    align-items: center;
+  }
 }
