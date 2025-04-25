@@ -1,29 +1,30 @@
-:root {
-  --bg-color: #f5f5f5;
-  --text-color: #333333;
-  --shift-nav: rgba(255, 255, 255, 0.8);
-  --border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  --glow-color: rgba(255, 165, 0, 0.5);
-  --highlight-white: #ffffffcc;
-  --metallic-copper: #e67e22;
-  --soft-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  --red-glow: #ff4d4d;
-  --green-glow: #00cc00;
-  --blue-glow: #1e90ff;
-  --black-glow: #1a1a1a;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
 }
 
+:root {
+  /* Light Mode Colors */
+  --bg-color-light: #f5f5f5;
+  --text-color-light: #333333;
+  --nav-bg-light: rgba(245, 245, 245, 0.8);
+  --border-bottom-light: 1px solid rgba(0, 0, 0, 0.1);
+  --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --highlight-light: #4a6fa5;
+  --copper-light: #b87333;
+  --glow-light: rgba(74, 111, 165, 0.5);
+  --white-border-light: rgba(0, 0, 0, 0.2);
+}
 body.dark-mode {
-  --bg-color: #0a0a0a;
-  --text-color: #fdfcfb;
-  --shift-nav: rgba(255, 255, 255, 0.06);
-  --border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  --glow-color: rgba(255, 255, 255, 0.3);
-  --highlight-white: #ffffff88;
-  --metallic-copper: #cc7b37;
-  --soft-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
-  --red-glow: #ff6666;
-  --green-glow: #33ff33;
-  --blue-glow: #66b2ff;
-  --black-glow: #4d4d4d;
+  --bg-color-dark: #121212;
+  --text-color-dark: #ffffff;
+  --nav-bg-dark: rgba(18, 18, 18, 0.8);
+  --border-bottom-dark: 1px solid rgba(255, 255, 255, 0.1);
+  --shadow-dark: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --highlight-dark: #7fa3d1;
+  --copper-dark: #d18f4a;
+  --glow-dark: rgba(127, 163, 209, 0.5);
+  --white-border-dark: rgba(255, 255, 255, 0.2);
 }
