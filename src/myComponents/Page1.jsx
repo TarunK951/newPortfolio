@@ -20,11 +20,70 @@ function Page1() {
     document.body.classList.toggle("dark-mode", shiftmode);
   }, [shiftmode]);
 
+  useEffect(() => {
+    const cursor = document.createElement("div");
+    cursor.className = "custom-cursor";
+    document.body.appendChild(cursor);
+
+    const moveCursor = (e) => {
+      cursor.style.left = `${e.clientX}px`;
+      cursor.style.top = `${e.clientY}px`;
+    };
+
+    const handleMouseDown = () => {
+      cursor.classList.add("active");
+    };
+
+    const handleMouseUp = () => {
+      cursor.classList.remove("active");
+    };
+
+    document.addEventListener("mousemove", moveCursor);
+    document.addEventListener("mousedown", handleMouseDown);
+    document.addEventListener("mouseup", handleMouseUp);
+
+    return () => {
+      document.removeEventListener("mousemove", moveCursor);
+      document.removeEventListener("mousedown", handleMouseDown);
+      document.removeEventListener("mouseup", handleMouseUp);
+      document.body.removeChild(cursor);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      document.body.classList.toggle("scrolling", window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.animationPlayState = "running";
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    document.querySelectorAll("[data-animate]").forEach((el) => {
+      observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className={`page1 ${shiftmode ? "dark" : "light"}`}>
       <nav className="navBar">
         <div className="navCom">
-          <div className="logo">TARUN</div>
+          <div className="logo" data-animate>
+            TARUN
+          </div>
           <button
             className="menu-toggle"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -37,8 +96,8 @@ function Page1() {
             )}
           </button>
           <div className={`details ${menuOpen ? "open" : ""}`}>
-            <p>Home</p>
-            <p>About</p>
+            <p data-animate>Home</p>
+            <p data-animate>About</p>
           </div>
           <div className="shift-btn">
             <button
@@ -47,6 +106,7 @@ function Page1() {
               aria-label={
                 shiftmode ? "Switch to light mode" : "Switch to dark mode"
               }
+              data-animate
             >
               {shiftmode ? (
                 <CiLight size={35} className="icon" />
@@ -59,32 +119,41 @@ function Page1() {
       </nav>
       <div className="intro">
         <div className="intro-card">
-          <div className="intro-text">
+          <div className="intro-text" data-animate>
             <div className="info">
-              <p className="greeting">Hello, I'm</p>
-              <p className="name">Tarun</p>
+              <p className="greeting" data-animate>
+                Hello, I'm
+              </p>
+              <p className="name" data-animate>
+                Tarun
+              </p>
             </div>
             <div className="bio">
-              <p>Passionate about crafting beautiful web experiences</p>
+              <p data-animate>
+                Passionate about crafting beautiful web experiences
+              </p>
             </div>
           </div>
-          <div className="intro-img">
+          <div className="intro-img" data-animate>
             <div className="image-wrapper">
+              <div className="image-glow-layers">
+                <div className="glow-layer glow-layer-1"></div>
+                <div className="glow-layer glow-layer-2"></div>
+              </div>
               <img
                 className="hi-img"
                 src={profileImage}
                 alt="Tarun's profile"
                 onError={(e) => console.error("Image failed to load:", e)}
               />
-              <div className="glow-overlay"></div>
             </div>
           </div>
         </div>
-        <div className="intro-footer">
+        <div className="intro-footer" data-animate>
           <div className="role">
-            <p>Frontend Developer</p>
+            <p data-animate>Frontend Developer</p>
           </div>
-          <div className="media-icons">
+          <div className="media-icons" data-animate>
             <a
               href="https://github.com"
               target="_blank"
@@ -120,11 +189,10 @@ function Page1() {
               <FaWhatsappSquare size={45} className="icon" />
             </a>
           </div>
-          <div className="Rbtn">
+          <div className="Rbtn" data-animate>
             <button aria-label="Download resume">
               <p>Download Resume</p>
               <MdFileDownload size={35} className="icon" />
-              <div className="ripple"></div>
             </button>
           </div>
         </div>
