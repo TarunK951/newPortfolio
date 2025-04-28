@@ -35,4 +35,5 @@ body.dark-mode {
   --soft-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
   --silver-glow: linear-gradient(90deg, #67e8f9, #cffafe, #67e8f9);
   --image-border: #a78bfa; /* Neon purple */
+  --image-border: #a78bfa; /* Neon purple */
 }
