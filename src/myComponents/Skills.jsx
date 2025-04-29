@@ -48,10 +48,13 @@ const Skills = () => {
     { icon: <FaHtml5 />, name: "HTML5", proficiency: "Advanced" },
     { icon: <FaCss3Alt />, name: "CSS3", proficiency: "Advanced" },
     { icon: <FaJs />, name: "JavaScript", proficiency: "Expert" },
-    { icon: <FaReact />, name: "React", proficiency: "Advanced" },
+    { icon: <FaReact />, name: "React", proficiency: "Expert" },
     { icon: <FaNodeJs />, name: "Node.js", proficiency: "Intermediate" },
     { icon: <FaGitAlt />, name: "Git", proficiency: "Advanced" },
     { icon: <FaDatabase />, name: "MongoDB", proficiency: "Intermediate" },
+    { icon: <FaFigma />, name: "Figma", proficiency: "Intermediate" },
+    { icon: <FaJava />, name: "Java", proficiency: "Intermediate" },
+    { icon: <FaPython />, name: "Python", proficiency: "Intermediate" },
   ];
 
   return (
