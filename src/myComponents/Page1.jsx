@@ -155,7 +155,7 @@ function Page1() {
           </div>
           <div className="media-icons" data-animate>
             <a
-              href="https://github.com"
+              href="https://github.com/TarunK951"
               target="_blank"
               rel="noopener noreferrer"
               className="social-icon"
@@ -164,7 +164,7 @@ function Page1() {
               <FaGithubSquare size={45} className="icon" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/satya-tarun-k-91038424a/"
               target="_blank"
               rel="noopener noreferrer"
               className="social-icon"
@@ -173,14 +173,14 @@ function Page1() {
               <FaLinkedin size={45} className="icon" />
             </a>
             <a
-              href="mailto:example@gmail.com"
+              href="mailto:satyatarun.951@gmail.com"
               className="social-icon"
               aria-label="Email"
             >
               <IoIosMail size={45} className="icon" />
             </a>
             <a
-              href="https://wa.me/1234567890"
+              href="https://wa.me/9391954467"
               target="_blank"
               rel="noopener noreferrer"
               className="social-icon"
@@ -190,10 +190,12 @@ function Page1() {
             </a>
           </div>
           <div className="Rbtn" data-animate>
-            <button aria-label="Download resume">
-              <p>Download Resume</p>
-              <MdFileDownload size={35} className="icon" />
-            </button>
+            <a>
+              <button aria-label="Download resume">
+                <p>Download Resume</p>
+                <MdFileDownload size={35} className="icon" />
+              </button>
+            </a>
           </div>
         </div>
       </div>
