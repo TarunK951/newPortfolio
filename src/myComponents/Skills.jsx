@@ -2,10 +2,13 @@ import React, { useEffect, useRef } from "react";
 import {
   FaCss3Alt,
   FaDatabase,
+  FaFigma,
   FaGitAlt,
   FaHtml5,
+  FaJava,
   FaJs,
   FaNodeJs,
+  FaPython,
   FaReact,
 } from "react-icons/fa";
 import "./skill.css";
