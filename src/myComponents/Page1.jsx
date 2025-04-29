@@ -109,9 +109,9 @@ function Page1() {
               data-animate
             >
               {shiftmode ? (
-                <CiLight size={35} className="icon" />
-              ) : (
                 <CiDark size={35} className="icon" />
+              ) : (
+                <CiLight size={35} className="icon" />
               )}
             </button>
           </div>
