@@ -13,17 +13,24 @@ import profileImage from "../assets/STK-20250425-WA0004-ezgif.com-speed.gif";
 import "./p.css";
 
 function Page1() {
-  // Initialize dark mode from localStorage or default to true (dark mode)
-  const [shiftmode, setShiftmode] = useState(() => {
-    const savedMode = localStorage.getItem("theme");
-    return savedMode ? JSON.parse(savedMode) : true; // Default to dark mode
-  });
+  // Default to dark mode (true), ignore localStorage to avoid override
+  const [shiftmode, setShiftmode] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
 
   // Apply dark mode class and save to localStorage
   useEffect(() => {
     document.body.classList.toggle("dark-mode", shiftmode);
     localStorage.setItem("theme", JSON.stringify(shiftmode));
+    console.log("Dark mode applied:", shiftmode); // Debug log
+  }, [shiftmode]);
+
+  // Set dark mode meta tag to prevent flash
+  useEffect(() => {
+    const meta = document.createElement("meta");
+    meta.name = "theme-color";
+    meta.content = shiftmode ? "#0a0a0a" : "#f8f1e9";
+    document.head.appendChild(meta);
+    return () => document.head.removeChild(meta);
   }, [shiftmode]);
 
   // Custom cursor effect
@@ -73,6 +80,7 @@ function Page1() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.style.animationPlayState = "running";
+            console.log("Page1 animation triggered:", entry.target); // Debug log
           }
         });
       },
@@ -118,9 +126,9 @@ function Page1() {
               data-animate
             >
               {shiftmode ? (
-                <CiLight size={35} className="icon" /> // Show light icon in dark mode
+                <CiLight size={35} className="icon" />
               ) : (
-                <CiDark size={35} className="icon" /> // Show dark icon in light mode
+                <CiDark size={35} className="icon" />
               )}
             </button>
           </div>
