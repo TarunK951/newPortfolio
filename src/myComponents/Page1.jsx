@@ -13,13 +13,20 @@ import profileImage from "../assets/STK-20250425-WA0004-ezgif.com-speed.gif";
 import "./p.css";
 
 function Page1() {
-  const [shiftmode, setShiftmode] = useState(false);
+  // Initialize dark mode from localStorage or default to true (dark mode)
+  const [shiftmode, setShiftmode] = useState(() => {
+    const savedMode = localStorage.getItem("theme");
+    return savedMode ? JSON.parse(savedMode) : true; // Default to dark mode
+  });
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // Apply dark mode class and save to localStorage
   useEffect(() => {
     document.body.classList.toggle("dark-mode", shiftmode);
+    localStorage.setItem("theme", JSON.stringify(shiftmode));
   }, [shiftmode]);
 
+  // Custom cursor effect
   useEffect(() => {
     const cursor = document.createElement("div");
     cursor.className = "custom-cursor";
@@ -50,6 +57,7 @@ function Page1() {
     };
   }, []);
 
+  // Scroll effect for navbar
   useEffect(() => {
     const handleScroll = () => {
       document.body.classList.toggle("scrolling", window.scrollY > 10);
@@ -58,6 +66,7 @@ function Page1() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // IntersectionObserver for animations
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -109,9 +118,9 @@ function Page1() {
               data-animate
             >
               {shiftmode ? (
-                <CiDark size={35} className="icon" />
+                <CiLight size={35} className="icon" /> // Show light icon in dark mode
               ) : (
-                <CiLight size={35} className="icon" />
+                <CiDark size={35} className="icon" /> // Show dark icon in light mode
               )}
             </button>
           </div>
@@ -190,7 +199,7 @@ function Page1() {
             </a>
           </div>
           <div className="Rbtn" data-animate>
-            <a href="./assests/resume- 2025-april.pdf" download>
+            <a href="./assests/resume-2025-april.pdf" download>
               <button aria-label="Download resume">
                 <p>Download Resume</p>
                 <MdFileDownload size={35} className="icon" />
