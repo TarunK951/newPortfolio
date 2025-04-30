@@ -6,17 +6,17 @@ const CursorEffect = () => {
   const trailLength = 15;
   const animationFrameId = useRef(null);
   const rippleRefs = useRef(new Map());
-  const colorCycle = useRef([
-    "#00ffff",
-    "#ff00ff",
-    "#ffff00",
-    "#00ff00",
-    "#ff007f",
+  const localColorCycle = useRef([
+    // Changed to localColorCycle
+    "#00ffff", // Cyan
+    "#ff00ff", // Magenta
+    "#ffff00", // Yellow
+    "#00ff00", // Green
+    "#ff007f", // Rose
   ]);
   const currentColorIndex = useRef(0);
 
   const getNeonColor = useCallback((opacity, colorName) => {
-    const colorValue = colorName;
     const hexToRgb = (hex) => {
       hex = hex.replace(/^#/, "");
       let a = hex.length === 3 ? hex.replace(/(.)/g, "$1$1") : hex;
@@ -26,7 +26,7 @@ const CursorEffect = () => {
       const b = bigint & 255;
       return `rgba(${r},${g},${b},${opacity})`;
     };
-    return hexToRgb(colorValue);
+    return hexToRgb(colorName);
   }, []);
 
   useEffect(() => {
@@ -37,11 +37,13 @@ const CursorEffect = () => {
     document.body.style.cursor = "none";
 
     // Apply styles directly to the cursorEffectElement
-    cursorEffectElement.style.position = "fixed";
-    cursorEffectElement.style.top = "0";
-    cursorEffectElement.style.left = "0";
-    cursorEffectElement.style.pointerEvents = "none";
-    cursorEffectElement.style.zIndex = "9999";
+    Object.assign(cursorEffectElement.style, {
+      position: "fixed",
+      top: "0",
+      left: "0",
+      pointerEvents: "none",
+      zIndex: "9999",
+    });
 
     const updateCursor = (e) => {
       const { clientX: x, clientY: y } = e;
@@ -61,7 +63,8 @@ const CursorEffect = () => {
       if (!cursorEffectRef.current) return;
       cursorEffectRef.current.innerHTML = "";
 
-      const currentAccentColor = colorCycle.current[currentColorIndex.current];
+      const currentNeonColor =
+        localColorCycle.current[currentColorIndex.current]; // Use localColorCycle
 
       // Render the main sparkle
       const sparkle = document.createElement("div");
@@ -72,18 +75,20 @@ const CursorEffect = () => {
       sparkle.style.top = `${
         trail.current[trail.current.length - 1]?.y || 0
       }px`;
-      sparkle.style.backgroundColor = getNeonColor(1, currentAccentColor);
+      sparkle.style.backgroundColor = getNeonColor(1, currentNeonColor); // Use currentNeonColor
       sparkle.style.boxShadow = `0 0 20px ${getNeonColor(
         0.7,
-        currentAccentColor
-      )}, 0 0 30px ${getNeonColor(0.5, currentAccentColor)}`;
+        currentNeonColor
+      )}, 0 0 30px ${getNeonColor(0.5, currentNeonColor)}`; // Use currentNeonColor
 
       // Apply styles directly
-      sparkle.style.width = "18px";
-      sparkle.style.height = "18px";
-      sparkle.style.borderRadius = "50%";
-      sparkle.style.position = "absolute";
-      sparkle.style.transform = "translate(-50%, -50%)";
+      Object.assign(sparkle.style, {
+        width: "18px",
+        height: "18px",
+        borderRadius: "50%",
+        position: "absolute",
+        transform: "translate(-50%, -50%)",
+      });
 
       cursorEffectRef.current.appendChild(sparkle);
 
@@ -97,22 +102,21 @@ const CursorEffect = () => {
         segment.style.top = `${point.y}px`;
         const opacity = 0.5 * (1 - i / (trailLength - 1));
         const size = 18 * (0.4 + i / (2 * (trailLength - 1)));
-        segment.style.backgroundColor = getNeonColor(
-          opacity,
-          currentAccentColor
-        );
+        segment.style.backgroundColor = getNeonColor(opacity, currentNeonColor); // Use currentNeonColor
         segment.style.boxShadow = `0 0 12px ${getNeonColor(
           opacity * 0.3,
-          currentAccentColor
-        )}`;
+          currentNeonColor
+        )}`; // Use currentNeonColor
         segment.style.width = `${size}px`;
         segment.style.height = `${size}px`;
         const angle = point.angle + i * 0.1;
         segment.style.transform = `translate(-50%, -50%) rotate(${angle}rad)`;
 
         // Apply styles directly
-        segment.style.borderRadius = "50%";
-        segment.style.position = "absolute";
+        Object.assign(segment.style, {
+          borderRadius: "50%",
+          position: "absolute",
+        });
 
         cursorEffectRef.current.appendChild(segment);
       }
@@ -138,18 +142,20 @@ const CursorEffect = () => {
       ripple.dataset.id = rippleId;
 
       // Apply styles directly
-      ripple.style.borderRadius = "50%";
-      ripple.style.position = "fixed";
-      ripple.style.zIndex = "9999";
-      ripple.style.backgroundColor = "rgba(59,130,246,0.3)";
-      ripple.style.boxShadow = "0 0 8px rgba(59,130,246,0.4)";
-      ripple.style.width = "18px";
-      ripple.style.height = "18px";
-      ripple.style.animation = "ripple-effect 0.6s ease-out";
-      ripple.style.pointerEvents = "none";
-      ripple.style.border = `2px solid ${
-        colorCycle.current[currentColorIndex.current]
-      }`;
+      Object.assign(ripple.style, {
+        borderRadius: "50%",
+        position: "fixed",
+        zIndex: "9999",
+        backgroundColor: "rgba(59,130,246,0.3)", // This color is fine, it's not from colorCycle
+        boxShadow: "0 0 8px rgba(59,130,246,0.4)", // This color is fine, it's not from colorCycle
+        width: "18px",
+        height: "18px",
+        animation: "ripple-effect 0.6s ease-out",
+        pointerEvents: "none",
+        border: `2px solid ${
+          localColorCycle.current[currentColorIndex.current]
+        }`, // Use localColorCycle
+      });
 
       document.body.appendChild(ripple);
       rippleRefs.current.set(rippleId, ripple);
@@ -165,11 +171,7 @@ const CursorEffect = () => {
 
     const cycleColor = () => {
       currentColorIndex.current =
-        (currentColorIndex.current + 1) % colorCycle.current.length;
-      document.documentElement.style.setProperty(
-        "--accent-color",
-        colorCycle.current[currentColorIndex.current]
-      );
+        (currentColorIndex.current + 1) % localColorCycle.current.length; // Use localColorCycle
     };
 
     document.addEventListener("mousemove", updateCursor);
@@ -193,8 +195,7 @@ const CursorEffect = () => {
       }
       document.body.style.cursor = "";
     };
-  }, [getNeonColor, colorCycle, currentColorIndex]);
-
+  }, [getNeonColor]); // Removed colorCycle and currentColorIndex from dependency array
   return null;
 };
 
