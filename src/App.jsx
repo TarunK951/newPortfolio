@@ -1,5 +1,6 @@
 import "./App.css";
 import AboutMe from "./myComponents/AboutMe";
+import CursorEffect from "./myComponents/CursorEffect";
 import Page1 from "./myComponents/Page1";
 import Projects from "./myComponents/Projects";
 import Skills from "./myComponents/Skills";
@@ -13,6 +14,7 @@ function App() {
       <Skills />
       <AboutMe />
       <Projects />
+      <CursorEffect />
     </div>
   );
 }
