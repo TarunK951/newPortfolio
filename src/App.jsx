@@ -1,4 +1,5 @@
 import "./App.css";
+import AboutMe from "./myComponents/AboutMe";
 import Page1 from "./myComponents/Page1";
 import Skills from "./myComponents/Skills";
 
@@ -9,6 +10,7 @@ function App() {
     <div>
       <Page1 />
       <Skills />
+      <AboutMe />
     </div>
   );
 }

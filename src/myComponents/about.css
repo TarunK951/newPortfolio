@@ -1,0 +1,12 @@
+.about-me {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  min-height: 80vh;
+
+  .about-title {
+    display: flex;
+    justify-content: center;
+  }
+}
