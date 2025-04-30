@@ -1,6 +1,7 @@
 import "./App.css";
 import AboutMe from "./myComponents/AboutMe";
 import Page1 from "./myComponents/Page1";
+import Projects from "./myComponents/Projects";
 import Skills from "./myComponents/Skills";
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <Page1 />
       <Skills />
       <AboutMe />
+      <Projects />
     </div>
   );
 }

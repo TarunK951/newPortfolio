@@ -10,21 +10,19 @@ import {
 import { IoIosMail } from "react-icons/io";
 import { MdFileDownload } from "react-icons/md";
 import profileImage from "../assets/STK-20250425-WA0004-ezgif.com-speed.gif";
+import FallingStarCursor from "./CursorEffect"; // Import the new cursor component
 import "./p.css";
 
 function Page1() {
-  // Default to dark mode (true), ignore localStorage to avoid override
   const [shiftmode, setShiftmode] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Apply dark mode class and save to localStorage
   useEffect(() => {
     document.body.classList.toggle("dark-mode", shiftmode);
     localStorage.setItem("theme", JSON.stringify(shiftmode));
     console.log("Dark mode applied:", shiftmode); // Debug log
   }, [shiftmode]);
 
-  // Set dark mode meta tag to prevent flash
   useEffect(() => {
     const meta = document.createElement("meta");
     meta.name = "theme-color";
@@ -33,38 +31,6 @@ function Page1() {
     return () => document.head.removeChild(meta);
   }, [shiftmode]);
 
-  // Custom cursor effect
-  useEffect(() => {
-    const cursor = document.createElement("div");
-    cursor.className = "custom-cursor";
-    document.body.appendChild(cursor);
-
-    const moveCursor = (e) => {
-      cursor.style.left = `${e.clientX}px`;
-      cursor.style.top = `${e.clientY}px`;
-    };
-
-    const handleMouseDown = () => {
-      cursor.classList.add("active");
-    };
-
-    const handleMouseUp = () => {
-      cursor.classList.remove("active");
-    };
-
-    document.addEventListener("mousemove", moveCursor);
-    document.addEventListener("mousedown", handleMouseDown);
-    document.addEventListener("mouseup", handleMouseUp);
-
-    return () => {
-      document.removeEventListener("mousemove", moveCursor);
-      document.removeEventListener("mousedown", handleMouseDown);
-      document.removeEventListener("mouseup", handleMouseUp);
-      document.body.removeChild(cursor);
-    };
-  }, []);
-
-  // Scroll effect for navbar
   useEffect(() => {
     const handleScroll = () => {
       document.body.classList.toggle("scrolling", window.scrollY > 10);
@@ -73,7 +39,6 @@ function Page1() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // IntersectionObserver for animations
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -96,6 +61,7 @@ function Page1() {
 
   return (
     <div className={`page1 ${shiftmode ? "dark" : "light"}`}>
+      <FallingStarCursor /> {/* Include the falling star cursor component */}
       <nav className="navBar">
         <div className="navCom">
           <div className="logo" data-animate>
