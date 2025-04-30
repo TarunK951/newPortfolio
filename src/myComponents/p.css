@@ -35,38 +35,6 @@
 }
 
 /* Custom Cursor */
-.custom-cursor {
-  position: fixed;
-  width: 20px;
-  height: 20px;
-  border: 2px solid var(--accent-color);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  animation: cursorPulse 1.5s infinite;
-  background: radial-gradient(circle, var(--glow-color) 20%, transparent 60%);
-  mix-blend-mode: difference;
-  transition: transform 0.1s ease, width 0.3s ease, height 0.3s ease;
-}
-
-.custom-cursor::after {
-  content: "";
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: var(--accent-color);
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.custom-cursor.active {
-  width: 30px;
-  height: 30px;
-  background: rgba(255, 255, 255, 0.8);
-}
 
 /* Navigation */
 .navBar {
