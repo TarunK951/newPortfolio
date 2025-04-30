@@ -557,8 +557,8 @@ body:not(.dark-mode) .about-me {
 }
 
 .about-line:not(.animate-line):not(.fly-away) {
-  animation: fallbackCrackDrop 1.2s ease-in-out forwards;
-  animation-delay: calc(var(--line-index) * 0.6s);
+  animation: fallDown 0.6s ease-in-out forwards;
+  animation-delay: calc(var(--line-index) * 0.1s);
 }
 
 /* Responsive design */
