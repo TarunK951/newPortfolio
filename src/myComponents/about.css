@@ -408,13 +408,13 @@ body:not(.dark-mode) .about-me {
   background-size: 30px 30px;
 }
 
-.about-me.animate-in {
+/* .about-me.animate-in {
   animation: pageFadeIn 0.5s ease-out forwards;
-}
+} */
 
-.about-me.animate-out {
+/* .about-me.animate-out {
   animation: pageFadeOut 0.5s ease-out forwards;
-}
+} */
 
 /* Title styling */
 .about-title {
@@ -493,21 +493,21 @@ body:not(.dark-mode) .about-me {
 
 .about-line.animate-line.crack-drop {
   opacity: 1;
-  animation: crackDrop 1s ease-in-out forwards; /* Slower */
+  animation: crackDrop 0.6s ease-in-out forwards; /* Slower */
 }
 
 .about-line.animate-line.slide-left {
   opacity: 1;
-  animation: slideLeft 0.8s ease-in-out forwards;
+  animation: crackDrop 0.6s ease-in-out forwards;
 }
 
 .about-line.animate-line.slide-right {
   opacity: 1;
-  animation: slideRight 0.6s ease-in-out forwards;
+  animation: crackDrop 0.6s ease-in-out forwards;
 }
 
 .about-line.fly-away {
-  animation: flyAway 0.8s ease-out forwards;
+  animation: flyAway 0.6s ease-out forwards;
 }
 
 .about-line:hover {
@@ -557,8 +557,8 @@ body:not(.dark-mode) .about-me {
 }
 
 .about-line:not(.animate-line):not(.fly-away) {
-  animation: fallbackCrackDrop 1.8s ease-in-out forwards;
-  animation-delay: calc(var(--line-index) * 0.7s);
+  animation: fallbackCrackDrop 1.2s ease-in-out forwards;
+  animation-delay: calc(var(--line-index) * 0.6s);
 }
 
 /* Responsive design */
