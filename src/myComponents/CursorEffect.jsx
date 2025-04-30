@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useRef } from "react";
-import "./CursorEffect.css";
 
 const CursorEffect = () => {
   const cursorEffectRef = useRef(null);
@@ -37,6 +36,13 @@ const CursorEffect = () => {
     document.body.appendChild(cursorEffectElement);
     document.body.style.cursor = "none";
 
+    // Apply styles directly to the cursorEffectElement
+    cursorEffectElement.style.position = "fixed";
+    cursorEffectElement.style.top = "0";
+    cursorEffectElement.style.left = "0";
+    cursorEffectElement.style.pointerEvents = "none";
+    cursorEffectElement.style.zIndex = "9999";
+
     const updateCursor = (e) => {
       const { clientX: x, clientY: y } = e;
       trail.current.push({
@@ -71,6 +77,14 @@ const CursorEffect = () => {
         0.7,
         currentAccentColor
       )}, 0 0 30px ${getNeonColor(0.5, currentAccentColor)}`;
+
+      // Apply styles directly
+      sparkle.style.width = "18px";
+      sparkle.style.height = "18px";
+      sparkle.style.borderRadius = "50%";
+      sparkle.style.position = "absolute";
+      sparkle.style.transform = "translate(-50%, -50%)";
+
       cursorEffectRef.current.appendChild(sparkle);
 
       // Render the tail segments
@@ -95,6 +109,11 @@ const CursorEffect = () => {
         segment.style.height = `${size}px`;
         const angle = point.angle + i * 0.1;
         segment.style.transform = `translate(-50%, -50%) rotate(${angle}rad)`;
+
+        // Apply styles directly
+        segment.style.borderRadius = "50%";
+        segment.style.position = "absolute";
+
         cursorEffectRef.current.appendChild(segment);
       }
 
@@ -117,8 +136,22 @@ const CursorEffect = () => {
       ripple.style.top = `${y}px`;
       const rippleId = Date.now();
       ripple.dataset.id = rippleId;
-      document.body.appendChild(ripple);
 
+      // Apply styles directly
+      ripple.style.borderRadius = "50%";
+      ripple.style.position = "fixed";
+      ripple.style.zIndex = "9999";
+      ripple.style.backgroundColor = "rgba(59,130,246,0.3)";
+      ripple.style.boxShadow = "0 0 8px rgba(59,130,246,0.4)";
+      ripple.style.width = "18px";
+      ripple.style.height = "18px";
+      ripple.style.animation = "ripple-effect 0.6s ease-out";
+      ripple.style.pointerEvents = "none";
+      ripple.style.border = `2px solid ${
+        colorCycle.current[currentColorIndex.current]
+      }`;
+
+      document.body.appendChild(ripple);
       rippleRefs.current.set(rippleId, ripple);
 
       setTimeout(() => {
@@ -160,7 +193,7 @@ const CursorEffect = () => {
       }
       document.body.style.cursor = "";
     };
-  }, [getNeonColor]);
+  }, [getNeonColor, colorCycle, currentColorIndex]);
 
   return null;
 };
