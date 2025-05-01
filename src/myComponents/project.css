@@ -351,5 +351,7 @@ body:not(.dark-mode) .projects-container {
   .proj-description p {
     font-size: 0.9rem;
     line-height: 1.5;
+
+    background: fixed;
   }
 }
