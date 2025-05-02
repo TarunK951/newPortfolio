@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { CiCircleInfo, CiLink } from "react-icons/ci";
 import "./project.css";
 
@@ -18,12 +18,43 @@ function Projects() {
     },
     {
       id: 2,
-      title: "E-commerce Website",
+      title: "React Crud",
       image:
-        "https://cdn.dribbble.com/users/4189230/screenshots/14986479/media/9f4e7e9b0d4a8e4f4c4c4c4c4c4c4c4c.png",
-      languages: ["React", "Node.js", "MongoDB"],
+        "https://play-lh.googleusercontent.com/r2ZbsIr5sQ7Wtl1T6eevyWj4KS7QbezF7JYB9gxQnLWbf0K4kU7qaLNcJLLUh0WG-3pK",
+      languages: ["HTML", "CSS", "JavaScript", "React JS"],
       description:
-        "A fully functional e-commerce website with user authentication, product listings, cart functionality, and order processing.",
+        "Built a functional CRUD application using React.js. Leveraged HTML and CSS for styling and structure. Employed nested components and prop passing for dynamic UI. Demonstrates proficiency in modern front-end technologies.",
+      link: "https://github.com/TarunK951/React-CRUD",
+    },
+
+    {
+      id: 3,
+      title: "CRED Clone",
+      image:
+        "https://play-lh.googleusercontent.com/r2ZbsIr5sQ7Wtl1T6eevyWj4KS7QbezF7JYB9gxQnLWbf0K4kU7qaLNcJLLUh0WG-3pK",
+      languages: ["HTML", "CSS"],
+      description:
+        "A clone of the CRED website with animations and styles, showcasing my CSS and HTML skills by replicating the original design.",
+      link: "#",
+    },
+    {
+      id: 4,
+      title: "CRED Clone",
+      image:
+        "https://play-lh.googleusercontent.com/r2ZbsIr5sQ7Wtl1T6eevyWj4KS7QbezF7JYB9gxQnLWbf0K4kU7qaLNcJLLUh0WG-3pK",
+      languages: ["HTML", "CSS"],
+      description:
+        "A clone of the CRED website with animations and styles, showcasing my CSS and HTML skills by replicating the original design.",
+      link: "#",
+    },
+    {
+      id: 5,
+      title: "CRED Clone",
+      image:
+        "https://play-lh.googleusercontent.com/r2ZbsIr5sQ7Wtl1T6eevyWj4KS7QbezF7JYB9gxQnLWbf0K4kU7qaLNcJLLUh0WG-3pK",
+      languages: ["HTML", "CSS"],
+      description:
+        "A clone of the CRED website with animations and styles, showcasing my CSS and HTML skills by replicating the original design.",
       link: "#",
     },
   ];
