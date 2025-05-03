@@ -116,7 +116,10 @@ function Projects() {
               <div className="proj-title">
                 <p>{project.title}</p>
                 <a href={project.link} onClick={(e) => e.stopPropagation()}>
-                  <CiLink />
+                  <a target="_blank">
+                    <CiLink target="_blank" />
+                  </a>
+                  {/* <CiLink target="_blank" /> */}
                 </a>
               </div>
               <div
