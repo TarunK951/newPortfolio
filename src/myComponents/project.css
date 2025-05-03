@@ -796,4 +796,8 @@
     width: 30px;
     height: 30px;
   }
+  .grid-square:nth-child(20) {
+    width: 30px;
+    height: 30px;
+  }
 }
