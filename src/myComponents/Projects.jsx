@@ -74,52 +74,73 @@ function Projects() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.style.animationPlayState = "running";
+            entry.target.classList.add("visible");
+          } else {
+            entry.target.classList.remove("visible");
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.1 }
     );
 
-    document.querySelectorAll("[data-animate]").forEach((el) => {
-      observer.observe(el);
-    });
-
+    const squares = document.querySelectorAll(".grid-square");
+    squares.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
 
   return (
     <div className="projects-container">
+      <div className="grid-square"></div>
+      <div className="grid-square"></div>
+      <div className="grid-square"></div>
+      <div className="grid-square"></div>
+      <div className="grid-square"></div>
+      <div className="grid-square"></div>
+      <div className="grid-square"></div>
+      <div className="grid-square"></div>
+      <div className="grid-square"></div>
+      <div className="grid-square"></div>
+      <div className="grid-square"></div>
+      <div className="grid-square"></div>
+      <div className="grid-square"></div>
+      <div className="grid-square"></div>
+      <div className="grid-square"></div>
+      <div className="grid-square"></div>
+      <div className="grid-square"></div>
+      <div className="grid-square"></div>
+      <div className="grid-square"></div>
+      <div className="grid-square"></div>
       <h1 className="projects-title">Projects</h1>
       <div className="projects">
-        {projectsData.map((project, index) => (
+        {projectsData.map((project) => (
           <div
             key={project.id}
             className={`project ${
               expandedProject === project.id ? "expanded" : ""
             }`}
             onClick={() => toggleExpand(project.id)}
-            data-animate
-            data-delay={`${index * 0.3}s`}
           >
             <div className="proj-img-container">
               <img
                 className="pro-img"
                 src={project.image}
                 alt={project.title}
-                onError={() =>
-                  console.error(`Failed to load image for ${project.title}`)
-                }
+                onError={(e) => {
+                  console.error(`Failed to load image for ${project.title}`);
+                  e.target.src = "https://via.placeholder.com/120";
+                }}
               />
             </div>
             <div className="proj-details">
               <div className="proj-title">
                 <p>{project.title}</p>
-                <a href={project.link} onClick={(e) => e.stopPropagation()}>
-                  <a target="_blank">
-                    <CiLink target="_blank" />
-                  </a>
-                  {/* <CiLink target="_blank" /> */}
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <CiLink />
                 </a>
               </div>
               <div
