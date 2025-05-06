@@ -110,6 +110,10 @@ function Projects() {
       <div className="grid-square"></div>
       <div className="grid-square"></div>
       <div className="grid-square"></div>
+      <div className="grid-square"></div>
+      <div className="grid-square"></div>
+      <div className="grid-square"></div>
+      <div className="grid-square"></div>
       <h1 className="projects-title">Projects</h1>
       <div className="projects">
         {projectsData.map((project) => (

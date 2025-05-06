@@ -79,8 +79,8 @@ function Page1() {
             )}
           </button>
           <div className={`details ${menuOpen ? "open" : ""}`}>
-            <p data-animate>Home</p>
-            <p data-animate>About</p>
+            {/* <p data-animate>Home</p>
+            <p data-animate>About</p> */}
           </div>
           <div className="shift-btn">
             <button
