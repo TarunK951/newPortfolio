@@ -173,7 +173,7 @@ function Page1() {
             </a>
           </div>
           <div className="Rbtn" data-animate>
-            <a href="./assests/resume-2025-april.pdf" download>
+            <a href="./assests/TarunResume.pdf" download>
               <button aria-label="Download resume">
                 <p style={{ textDecoration: "none" }}>Download Resume</p>
                 <MdFileDownload size={35} className="icon" />
