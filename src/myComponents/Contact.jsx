@@ -32,7 +32,7 @@ function Contact() {
     if (icons) observer.observe(icons);
 
     // Initialize EmailJS
-    emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS Public Key
+    emailjs.init("pZoKlOxSnjpqbwJnI");
 
     return () => {
       if (form) observer.unobserve(form);
@@ -69,7 +69,7 @@ function Contact() {
 
   return (
     <div className="contact-section">
-      {[...Array(20)].map((_, i) => (
+      {[...Array(40)].map((_, i) => (
         <div key={i} className="smoke-particle"></div>
       ))}
       <div className="contact-container">

@@ -23,7 +23,7 @@ body.dark-mode .contact-section::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--smoke-enhanced);
+  background: var(--smoke-grey);
   opacity: 0.3;
   z-index: -2;
   pointer-events: none;
@@ -31,212 +31,412 @@ body.dark-mode .contact-section::before {
 
 body.dark-mode .contact-section .smoke-particle {
   position: absolute;
-  background: var(--smoke-enhanced);
+  background: var(--smoke-grey);
   border-radius: 50%;
   pointer-events: none;
-  animation: smokeParticle 8s infinite ease-in-out;
+  animation: smokeParticle 10s infinite ease-in-out;
   will-change: transform, opacity;
 }
 
 /* Smoke particles */
 body.dark-mode .contact-section .smoke-particle:nth-child(1) {
-  width: 14px;
-  height: 14px;
-  left: 5%;
-  top: 10%;
-  --move-x: 25px;
-  --move-y: -35px;
+  width: 10px;
+  height: 10px;
+  left: 2%;
+  top: 5%;
+  --move-x: 20px;
+  --move-y: -30px;
   animation-delay: 0s;
 }
 
 body.dark-mode .contact-section .smoke-particle:nth-child(2) {
-  width: 9px;
-  height: 9px;
-  left: 15%;
-  top: 25%;
-  --move-x: -20px;
-  --move-y: 30px;
-  animation-delay: 0.4s;
+  width: 8px;
+  height: 8px;
+  left: 10%;
+  top: 15%;
+  --move-x: -15px;
+  --move-y: 25px;
+  animation-delay: 0.2s;
 }
 
 body.dark-mode .contact-section .smoke-particle:nth-child(3) {
-  width: 16px;
-  height: 16px;
+  width: 12px;
+  height: 12px;
+  left: 18%;
+  top: 25%;
+  --move-x: 18px;
+  --move-y: -20px;
+  animation-delay: 0.4s;
+}
+
+body.dark-mode .contact-section .smoke-particle:nth-child(4) {
+  width: 9px;
+  height: 9px;
   left: 25%;
-  top: 40%;
+  top: 35%;
+  --move-x: -20px;
+  --move-y: 22px;
+  animation-delay: 0.6s;
+}
+
+body.dark-mode .contact-section .smoke-particle:nth-child(5) {
+  width: 11px;
+  height: 11px;
+  left: 32%;
+  top: 45%;
   --move-x: 15px;
   --move-y: -25px;
   animation-delay: 0.8s;
 }
 
-body.dark-mode .contact-section .smoke-particle:nth-child(4) {
-  width: 11px;
-  height: 11px;
-  left: 35%;
-  top: 55%;
-  --move-x: -30px;
-  --move-y: 20px;
-  animation-delay: 1.2s;
-}
-
-body.dark-mode .contact-section .smoke-particle:nth-child(5) {
+body.dark-mode .contact-section .smoke-particle:nth-child(6) {
   width: 10px;
   height: 10px;
-  left: 45%;
-  top: 70%;
-  --move-x: 20px;
-  --move-y: -30px;
-  animation-delay: 1.6s;
-}
-
-body.dark-mode .contact-section .smoke-particle:nth-child(6) {
-  width: 12px;
-  height: 12px;
-  left: 55%;
-  top: 15%;
-  --move-x: -15px;
-  --move-y: 25px;
-  animation-delay: 2s;
+  left: 38%;
+  top: 55%;
+  --move-x: -18px;
+  --move-y: 20px;
+  animation-delay: 1s;
 }
 
 body.dark-mode .contact-section .smoke-particle:nth-child(7) {
-  width: 15px;
-  height: 15px;
-  left: 65%;
-  top: 30%;
-  --move-x: 25px;
-  --move-y: -20px;
-  animation-delay: 2.4s;
+  width: 13px;
+  height: 13px;
+  left: 45%;
+  top: 65%;
+  --move-x: 22px;
+  --move-y: -18px;
+  animation-delay: 1.2s;
 }
 
 body.dark-mode .contact-section .smoke-particle:nth-child(8) {
   width: 8px;
   height: 8px;
-  left: 75%;
-  top: 45%;
-  --move-x: -20px;
-  --move-y: 30px;
-  animation-delay: 2.8s;
+  left: 50%;
+  top: 75%;
+  --move-x: -15px;
+  --move-y: 25px;
+  animation-delay: 1.4s;
 }
 
 body.dark-mode .contact-section .smoke-particle:nth-child(9) {
-  width: 11px;
-  height: 11px;
-  left: 85%;
-  top: 60%;
-  --move-x: 15px;
-  --move-y: -25px;
-  animation-delay: 3.2s;
+  width: 12px;
+  height: 12px;
+  left: 55%;
+  top: 10%;
+  --move-x: 20px;
+  --move-y: -22px;
+  animation-delay: 1.6s;
 }
 
 body.dark-mode .contact-section .smoke-particle:nth-child(10) {
-  width: 13px;
-  height: 13px;
-  left: 10%;
-  top: 75%;
-  --move-x: -30px;
+  width: 10px;
+  height: 10px;
+  left: 60%;
+  top: 20%;
+  --move-x: -18px;
   --move-y: 20px;
-  animation-delay: 3.6s;
+  animation-delay: 1.8s;
 }
 
 body.dark-mode .contact-section .smoke-particle:nth-child(11) {
   width: 9px;
   height: 9px;
-  left: 20%;
-  top: 90%;
-  --move-x: 20px;
-  --move-y: -30px;
-  animation-delay: 4s;
+  left: 65%;
+  top: 30%;
+  --move-x: 15px;
+  --move-y: -25px;
+  animation-delay: 2s;
 }
 
 body.dark-mode .contact-section .smoke-particle:nth-child(12) {
-  width: 12px;
-  height: 12px;
-  left: 30%;
-  top: 20%;
-  --move-x: -15px;
-  --move-y: 25px;
-  animation-delay: 4.4s;
+  width: 11px;
+  height: 11px;
+  left: 70%;
+  top: 40%;
+  --move-x: -20px;
+  --move-y: 22px;
+  animation-delay: 2.2s;
 }
 
 body.dark-mode .contact-section .smoke-particle:nth-child(13) {
+  width: 14px;
+  height: 14px;
+  left: 75%;
+  top: 50%;
+  --move-x: 18px;
+  --move-y: -20px;
+  animation-delay: 2.4s;
+}
+
+body.dark-mode .contact-section .smoke-particle:nth-child(14) {
   width: 10px;
   height: 10px;
-  left: 40%;
+  left: 80%;
+  top: 60%;
+  --move-x: -15px;
+  --move-y: 25px;
+  animation-delay: 2.6s;
+}
+
+body.dark-mode .contact-section .smoke-particle:nth-child(15) {
+  width: 12px;
+  height: 12px;
+  left: 85%;
+  top: 70%;
+  --move-x: 20px;
+  --move-y: -18px;
+  animation-delay: 2.8s;
+}
+
+body.dark-mode .contact-section .smoke-particle:nth-child(16) {
+  width: 9px;
+  height: 9px;
+  left: 90%;
+  top: 80%;
+  --move-x: -22px;
+  --move-y: 20px;
+  animation-delay: 3s;
+}
+
+body.dark-mode .contact-section .smoke-particle:nth-child(17) {
+  width: 11px;
+  height: 11px;
+  left: 5%;
+  top: 90%;
+  --move-x: 15px;
+  --move-y: -25px;
+  animation-delay: 3.2s;
+}
+
+body.dark-mode .contact-section .smoke-particle:nth-child(18) {
+  width: 10px;
+  height: 10px;
+  left: 12%;
+  top: 25%;
+  --move-x: -18px;
+  --move-y: 22px;
+  animation-delay: 3.4s;
+}
+
+body.dark-mode .contact-section .smoke-particle:nth-child(19) {
+  width: 13px;
+  height: 13px;
+  left: 20%;
   top: 35%;
-  --move-x: 25px;
+  --move-x: 20px;
+  --move-y: -20px;
+  animation-delay: 3.6s;
+}
+
+body.dark-mode .contact-section .smoke-particle:nth-child(20) {
+  width: 8px;
+  height: 8px;
+  left: 28%;
+  top: 45%;
+  --move-x: -15px;
+  --move-y: 25px;
+  animation-delay: 3.8s;
+}
+
+body.dark-mode .contact-section .smoke-particle:nth-child(21) {
+  width: 12px;
+  height: 12px;
+  left: 35%;
+  top: 55%;
+  --move-x: 18px;
+  --move-y: -22px;
+  animation-delay: 4s;
+}
+
+body.dark-mode .contact-section .smoke-particle:nth-child(22) {
+  width: 10px;
+  height: 10px;
+  left: 42%;
+  top: 65%;
+  --move-x: -20px;
+  --move-y: 20px;
+  animation-delay: 4.2s;
+}
+
+body.dark-mode .contact-section .smoke-particle:nth-child(23) {
+  width: 9px;
+  height: 9px;
+  left: 48%;
+  top: 75%;
+  --move-x: 15px;
+  --move-y: -25px;
+  animation-delay: 4.4s;
+}
+
+body.dark-mode .contact-section .smoke-particle:nth-child(24) {
+  width: 11px;
+  height: 11px;
+  left: 55%;
+  top: 85%;
+  --move-x: -18px;
+  --move-y: 22px;
+  animation-delay: 4.6s;
+}
+
+body.dark-mode .contact-section .smoke-particle:nth-child(25) {
+  width: 14px;
+  height: 14px;
+  left: 60%;
+  top: 15%;
+  --move-x: 20px;
   --move-y: -20px;
   animation-delay: 4.8s;
 }
 
-body.dark-mode .contact-section .smoke-particle:nth-child(14) {
-  width: 18px;
-  height: 18px;
-  left: 50%;
-  top: 50%;
-  --move-x: -20px;
-  --move-y: 30px;
+body.dark-mode .contact-section .smoke-particle:nth-child(26) {
+  width: 10px;
+  height: 10px;
+  left: 65%;
+  top: 25%;
+  --move-x: -15px;
+  --move-y: 25px;
+  animation-delay: 5s;
+}
+
+body.dark-mode .contact-section .smoke-particle:nth-child(27) {
+  width: 12px;
+  height: 12px;
+  left: 70%;
+  top: 35%;
+  --move-x: 18px;
+  --move-y: -22px;
   animation-delay: 5.2s;
 }
 
-body.dark-mode .contact-section .smoke-particle:nth-child(15) {
+body.dark-mode .contact-section .smoke-particle:nth-child(28) {
+  width: 9px;
+  height: 9px;
+  left: 75%;
+  top: 45%;
+  --move-x: -20px;
+  --move-y: 20px;
+  animation-delay: 5.4s;
+}
+
+body.dark-mode .contact-section .smoke-particle:nth-child(29) {
   width: 11px;
   height: 11px;
-  left: 60%;
-  top: 65%;
+  left: 80%;
+  top: 55%;
   --move-x: 15px;
   --move-y: -25px;
   animation-delay: 5.6s;
 }
 
-body.dark-mode .contact-section .smoke-particle:nth-child(16) {
+body.dark-mode .contact-section .smoke-particle:nth-child(30) {
+  width: 10px;
+  height: 10px;
+  left: 85%;
+  top: 65%;
+  --move-x: -18px;
+  --move-y: 22px;
+  animation-delay: 5.8s;
+}
+
+body.dark-mode .contact-section .smoke-particle:nth-child(31) {
   width: 13px;
   height: 13px;
-  left: 70%;
-  top: 80%;
-  --move-x: -25px;
-  --move-y: 15px;
+  left: 90%;
+  top: 75%;
+  --move-x: 20px;
+  --move-y: -20px;
   animation-delay: 6s;
 }
 
-body.dark-mode .contact-section .smoke-particle:nth-child(17) {
-  width: 10px;
-  height: 10px;
-  left: 80%;
-  top: 25%;
-  --move-x: 20px;
-  --move-y: -30px;
+body.dark-mode .contact-section .smoke-particle:nth-child(32) {
+  width: 8px;
+  height: 8px;
+  left: 5 worsen;
+  top: 85%;
+  animation-delay: 6.2s;
+  --move-x: -15px;
+  --move-y: 25px;
+}
+
+body.dark-mode .contact-section .smoke-particle:nth-child(33) {
+  width: 12px;
+  height: 12px;
+  left: 15%;
+  top: 10%;
+  --move-x: 18px;
+  --move-y: -22px;
   animation-delay: 6.4s;
 }
 
-body.dark-mode .contact-section .smoke-particle:nth-child(18) {
-  width: 12px;
-  height: 12px;
-  left: 90%;
-  top: 40%;
-  --move-x: -15px;
-  --move-y: 25px;
+body.dark-mode .contact-section .smoke-particle:nth-child(34) {
+  width: 10px;
+  height: 10px;
+  left: 22%;
+  top: 20%;
+  --move-x: -20px;
+  --move-y: 20px;
+  animation-delay: 6.6s;
+}
+
+body.dark-mode .contact-section .smoke-particle:nth-child(35) {
+  width: 9px;
+  height: 9px;
+  left: 30%;
+  top: 30%;
+  --move-x: 15px;
+  --move-y: -25px;
   animation-delay: 6.8s;
 }
 
-body.dark-mode .contact-section .smoke-particle:nth-child(19) {
-  width: 15px;
-  height: 15px;
-  left: 15%;
-  top: 55%;
-  --move-x: 30px;
+body.dark-mode .contact-section .smoke-particle:nth-child(36) {
+  width: 11px;
+  height: 11px;
+  left: 38%;
+  top: 40%;
+  --move-x: -18px;
+  --move-y: 22px;
+  animation-delay: 7s;
+}
+
+body.dark-mode .contact-section .smoke-particle:nth-child(37) {
+  width: 14px;
+  height: 14px;
+  left: 45%;
+  top: 50%;
+  --move-x: 20px;
   --move-y: -20px;
   animation-delay: 7.2s;
 }
 
-body.dark-mode .contact-section .smoke-particle:nth-child(20) {
+body.dark-mode .contact-section .smoke-particle:nth-child(38) {
+  width: 10px;
+  height: 10px;
+  left: 50%;
+  top: 60%;
+  --move-x: -15px;
+  --move-y: 25px;
+  animation-delay: 7.4s;
+}
+
+body.dark-mode .contact-section .smoke-particle:nth-child(39) {
+  width: 12px;
+  height: 12px;
+  left: 55%;
+  top: 70%;
+  --move-x: 18px;
+  --move-y: -22px;
+  animation-delay: 7.6s;
+}
+
+body.dark-mode .contact-section .smoke-particle:nth-child(40) {
   width: 9px;
   height: 9px;
-  left: 25%;
-  top: 70%;
+  left: 60%;
+  top: 80%;
   --move-x: -20px;
-  --move-y: 30px;
-  animation-delay: 7.6s;
+  --move-y: 20px;
+  animation-delay: 7.8s;
 }
 
 /* Contact container with frosted glass effect */
@@ -445,14 +645,14 @@ body.dark-mode .contact-section .smoke-particle:nth-child(20) {
 @keyframes smokeParticle {
   0% {
     transform: translate(0, 0) scale(1);
-    opacity: 0.35;
+    opacity: 0.4;
   }
   50% {
     transform: translate(var(--move-x), var(--move-y)) scale(1.5);
     opacity: 0.6;
   }
   100% {
-    transform: translate(var(--move-x), calc(var(--move-y) + 80px)) scale(0.5);
+    transform: translate(var(--move-x), calc(var(--move-y) + 80px)) scale(0.8);
     opacity: 0;
   }
 }
@@ -521,8 +721,8 @@ body.dark-mode .contact-section .smoke-particle:nth-child(20) {
   }
 
   body.dark-mode .contact-section .smoke-particle {
-    width: 9px !important;
-    height: 9px !important;
+    width: 7px !important;
+    height: 7px !important;
   }
 }
 
@@ -577,8 +777,8 @@ body.dark-mode .contact-section .smoke-particle:nth-child(20) {
   }
 
   body.dark-mode .contact-section .smoke-particle {
-    width: 7px !important;
-    height: 7px !important;
+    width: 6px !important;
+    height: 6px !important;
   }
 }
 
@@ -635,7 +835,7 @@ body.dark-mode .contact-section .smoke-particle:nth-child(20) {
   }
 
   body.dark-mode .contact-section .smoke-particle {
-    width: 6px !important;
-    height: 6px !important;
+    width: 5px !important;
+    height: 5px !important;
   }
 }

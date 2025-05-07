@@ -16,6 +16,7 @@ html {
 }
 
 :root {
+  --smoke-grey: rgba(160, 160, 160, 0.4);
   --accent-color: #e5e7eb; /* Light grey for frosty effect */
   --glow-color: rgba(255, 255, 255, 0.3); /* Soft white glow */
   --metallic-copper: #d1d5db; /* Neutral grey for hover effects */
@@ -53,6 +54,7 @@ html {
 }
 
 body.dark-mode {
+  --smoke-grey: rgba(120, 120, 120, 0.6);
   --accent-color: #9ca3af; /* Darker grey for frosty effect */
   --glow-color: rgba(200, 200, 200, 0.4); /* Soft grey glow */
   --metallic-copper: #6b7280; /* Darker grey for hover effects */
