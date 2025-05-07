@@ -8,29 +8,29 @@ function Certificates() {
       name: "freeCodeCamp",
       certName: "Responsive Web Design Certification",
       image: <FaFreeCodeCamp className="cert-icon" />,
-      link: "https://freecodecamp.org/certification/placeholder-responsive-web-design",
+      link: "https://www.freecodecamp.org/certification/fcc35d50086-0e3b-4c46-b3b9-2100268ce3f8/responsive-web-design",
       info: "I have learned the languages that developers use to build webpages: HTML (Hypertext Markup Language) for content, and CSS (Cascading Style Sheets) for design & learned how to make webpages that respond to different screen sizes by building a photo gallery with Flexbox, and a magazine article layout with CSS Grid.",
     },
     {
       name: "freeCodeCamp",
       certName: "JavaScript Algorithms and Data Structures",
       image: <FaFreeCodeCamp className="cert-icon" />,
-      link: "https://freecodecamp.org/certification/placeholder-javascript-algorithms",
+      link: "https://www.freecodecamp.org/certification/fcc35d50086-0e3b-4c46-b3b9-2100268ce3f8/javascript-algorithms-and-data-structures-v8",
       info: "I have learned JavaScript fundamentals, ES6, regular expressions, basic data structures, and object-oriented programming by building projects like a palindrome checker and a Roman numeral converter.",
     },
     {
       name: "freeCodeCamp",
       certName: "Front End Development Libraries",
       image: <FaFreeCodeCamp className="cert-icon" />,
-      link: "https://freecodecamp.org/certification/placeholder-frontend-libraries",
+      link: "https://www.freecodecamp.org/certification/fcc35d50086-0e3b-4c46-b3b9-2100268ce3f8/javascript-algorithms-and-data-structures",
       info: "I have mastered front-end libraries like React, Redux, Sass, and Bootstrap by building projects such as a random quote machine and a Markdown previewer.",
     },
     {
-      name: "freeCodeCamp",
-      certName: "Back End Development and APIs",
+      name: "Great Learning",
+      certName: "React JS",
       image: <FaFreeCodeCamp className="cert-icon" />,
-      link: "https://freecodecamp.org/certification/placeholder-backend-apis",
-      info: "I have learned how to build back-end applications and APIs using Node.js and Express, including how to handle requests, manage databases, and create microservices.",
+      link: "https://olympus.mygreatlearning.com/courses/52045/certificate?pb_id=581",
+      info: "Completed a certified course in React.js, gaining practical experience with core concepts like components, props, state, and hooks. Built responsive web applications using reusable components and explored state management, conditional rendering, and form handling. The course strengthened my ability to design scalable and maintainable front-end interfaces.",
     },
   ];
 
@@ -62,6 +62,9 @@ function Certificates() {
 
   return (
     <div className="certificates-section">
+      <div className="bubble"></div>
+      <div className="bubble"></div>
+      <div className="bubble"></div>
       <h1 className="section-title">My Certificates</h1>
       <div className="certificates-grid" ref={gridRef}>
         {certificates.map((item, index) => (
