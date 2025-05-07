@@ -15,21 +15,25 @@ html {
   scroll-snap-align: start;
 }
 
-/* Root variables for light mode */
 :root {
-  --bg-color: #f8f1e9; /* Ivory white */
-  --text-color: #2d232e; /* Deep purple-gray */
+  --accent-color: #e5e7eb; /* Light grey for frosty effect */
+  --glow-color: rgba(255, 255, 255, 0.3); /* Soft white glow */
+  --metallic-copper: #d1d5db; /* Neutral grey for hover effects */
+  --frosted-bg: rgba(255, 255, 255, 0.1); /* Semi-transparent for glass */
+  --frosted-blur: blur(10px);
+  --bg-color: #f8f1e9;
+  --text-color: #2d232e;
   --shift-nav: rgba(255, 255, 255, 0.9);
   --border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  --glow-color: rgba(59, 130, 246, 0.5); /* Blue glow */
-  --accent-color: #3b82f6; /* Soft blue */
-  --metallic-copper: #3b82f6; /* Soft blue */
+  --glow-color: rgba(59, 130, 246, 0.5);
+  --accent-color: #3b82f6;
+  --metallic-copper: #3b82f6;
   --soft-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   --silver-glow: linear-gradient(90deg, #bfdbfe, #eff6ff, #bfdbfe);
-  --image-border: #c4b5fd; /* Lavender */
+  --image-border: #c4b5fd;
   --social-icon-size: 50px;
   --transition: all 0.3s ease;
-  --hover-bg: rgba(59, 130, 246, 0.1); /* Light blue hover bg */
+  --hover-bg: rgba(59, 130, 246, 0.1);
   --reflective-border: linear-gradient(45deg, #3b82f6, #c4b5fd);
   --animation-delay: 0.1s;
   --pulse-glow: rgba(59, 130, 246, 0.3);
@@ -40,21 +44,31 @@ html {
     rgba(255, 255, 255, 0.5),
     transparent
   );
+  --icon-github: #2d3748;
+  --icon-linkedin: #0a66c2;
+  --icon-email: #e53e3e;
+  --icon-whatsapp: #25d366;
+  --button-bg: #3b82f6;
+  --success-bg: #10b981;
 }
 
-/* Dark mode variables */
 body.dark-mode {
-  --bg-color: #0a0a0a; /* Jet black */
-  --text-color: #e5e5e5; /* Light gray */
+  --accent-color: #9ca3af; /* Darker grey for frosty effect */
+  --glow-color: rgba(200, 200, 200, 0.4); /* Soft grey glow */
+  --metallic-copper: #6b7280; /* Darker grey for hover effects */
+  --frosted-bg: rgba(50, 50, 50, 0.2); /* Darker semi-transparent for glass */
+  --frosted-blur: blur(12px);
+  --bg-color: #0a0a0a;
+  --text-color: #e5e5e5;
   --shift-nav: rgba(255, 255, 255, 0.05);
   --border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  --glow-color: rgba(6, 182, 212, 0.6); /* Cyan glow */
-  --accent-color: #06b6d4; /* Neon cyan */
-  --metallic-copper: #06b6d4; /* Neon cyan */
+  --glow-color: rgba(6, 182, 212, 0.6);
+  --accent-color: #06b6d4;
+  --metallic-copper: #06b6d4;
   --soft-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
   --silver-glow: linear-gradient(90deg, #67e8f9, #cffafe, #67e8f9);
-  --image-border: #a78bfa; /* Neon purple */
-  --hover-bg: rgba(6, 182, 212, 0.15); /* Light cyan hover bg */
+  --image-border: #a78bfa;
+  --hover-bg: rgba(6, 182, 212, 0.15);
   --reflective-border: linear-gradient(45deg, #06b6d4, #a78bfa);
   --pulse-glow: rgba(6, 182, 212, 0.3);
   --glitter-color: rgba(6, 182, 212, 0.25);
@@ -64,4 +78,11 @@ body.dark-mode {
     rgba(255, 255, 255, 0.4),
     transparent
   );
+  --icon-github: #a0aec0;
+  --icon-linkedin: #00a0dc;
+  --icon-email: #ef5826;
+  --icon-whatsapp: #68d391;
+  --smoke-color: rgba(255, 255, 255, 0.35);
+  --button-bg: #06b6d4;
+  --success-bg: #10b981;
 }
