@@ -911,7 +911,7 @@ body.dark-mode .intro-text .info .name {
   }
 
   .navCom .menu-toggle .icon {
-    display: block;
+    display: none;
     width: 25px;
     height: 25px;
   }
