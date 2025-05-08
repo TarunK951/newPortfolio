@@ -1,5 +1,6 @@
 /* Base styles for contact section */
 .contact-section {
+  padding-bottom: 50px;
   width: 100%;
   margin: 0 auto;
   padding: 4rem 2rem;
@@ -13,6 +14,9 @@
 
 /* Smoke effect in dark mode */
 body.dark-mode .contact-section {
+  padding-top: 60px;
+  padding-bottom: 50px;
+  min-height: min-content;
   background-color: #0a0a0a;
 }
 
