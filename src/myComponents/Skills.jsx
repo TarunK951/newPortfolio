@@ -54,7 +54,7 @@ const Skills = () => {
     { icon: <FaJs />, name: "JavaScript", proficiency: "Expert" },
     { icon: <FaReact />, name: "React Js", proficiency: "Expert" },
     { icon: <SiNextdotjs />, name: "Next Js", proficiency: "Expert" },
-    { icon: <FaNodeJs />, name: "Node.Js", proficiency: "Intermediate" },
+    { icon: <FaNodeJs />, name: "Node.Js", proficiency: "Expert" },
     { icon: <FaGitAlt />, name: "Git", proficiency: "Advanced" },
     { icon: <FaDatabase />, name: "MongoDB", proficiency: "Intermediate" },
     { icon: <FaFigma />, name: "Figma", proficiency: "Intermediate" },
