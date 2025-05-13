@@ -11,6 +11,7 @@ import {
   FaPython,
   FaReact,
 } from "react-icons/fa";
+import { SiNextdotjs } from "react-icons/si";
 import "./skill.css";
 
 const Skills = () => {
@@ -51,8 +52,9 @@ const Skills = () => {
     { icon: <FaHtml5 />, name: "HTML5", proficiency: "Advanced" },
     { icon: <FaCss3Alt />, name: "CSS3", proficiency: "Advanced" },
     { icon: <FaJs />, name: "JavaScript", proficiency: "Expert" },
-    { icon: <FaReact />, name: "React", proficiency: "Expert" },
-    { icon: <FaNodeJs />, name: "Node.js", proficiency: "Intermediate" },
+    { icon: <FaReact />, name: "React Js", proficiency: "Expert" },
+    { icon: <SiNextdotjs />, name: "Next Js", proficiency: "Expert" },
+    { icon: <FaNodeJs />, name: "Node.Js", proficiency: "Intermediate" },
     { icon: <FaGitAlt />, name: "Git", proficiency: "Advanced" },
     { icon: <FaDatabase />, name: "MongoDB", proficiency: "Intermediate" },
     { icon: <FaFigma />, name: "Figma", proficiency: "Intermediate" },
