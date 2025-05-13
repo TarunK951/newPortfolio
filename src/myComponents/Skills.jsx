@@ -10,9 +10,10 @@ import {
   FaNodeJs,
   FaPython,
   FaReact,
-  SiNextdotjs
+   
   
 } from "react-icons/fa";
+import { SiNextdotjs } from "react-icons/si";
 import "./skill.css";
 
 const Skills = () => {
