@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import {
   FaCss3Alt,
   FaDatabase,
@@ -11,6 +11,7 @@ import {
   FaPython,
   FaReact,
 } from "react-icons/fa";
+import { SiNextdotjs } from "react-icons/si";
 import "./skill.css";
 
 const Skills = () => {
@@ -52,6 +53,7 @@ const Skills = () => {
     { icon: <FaCss3Alt />, name: "CSS3", proficiency: "Advanced" },
     { icon: <FaJs />, name: "JavaScript", proficiency: "Expert" },
     { icon: <FaReact />, name: "React", proficiency: "Expert" },
+    { icon: <SiNextdotjs />, name: "Next Js", proficiency: "Expert" },
     { icon: <FaNodeJs />, name: "Node.js", proficiency: "Intermediate" },
     { icon: <FaGitAlt />, name: "Git", proficiency: "Advanced" },
     { icon: <FaDatabase />, name: "MongoDB", proficiency: "Intermediate" },
