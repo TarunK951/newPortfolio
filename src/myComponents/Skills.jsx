@@ -75,7 +75,7 @@ const Skills = () => {
             <div className="skill-icon">{skill.icon}</div>
             <div className="skill-info">
               <h3 className="skill-name">{skill.name}</h3>
-              <p className="skill-proficiency">{skill.proficiency}</p>
+{/*               <p className="skill-proficiency">{skill.proficiency}</p> */}
             </div>
           </div>
         ))}
